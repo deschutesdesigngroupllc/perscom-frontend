@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 /**
  * Realistic Discord channel + bot embed mockup, rendered in HTML/Tailwind.
@@ -38,19 +38,13 @@ export function DiscordMock() {
         <div className="flex items-start gap-3">
           {/* Bot avatar */}
           <div className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-full bg-[#0a0e1f] ring-1 ring-white/10">
-            <Image
-              src="/icon.svg"
-              alt="PERSCOM"
-              width={28}
-              height={28}
-              className="h-7 w-7"
-            />
+            <Image src="/icon.svg" alt="PERSCOM" width={28} height={28} className="h-7 w-7" />
           </div>
 
           <div className="min-w-0 flex-1">
             <div className="flex items-baseline gap-2">
               <span className="font-medium text-white">PERSCOM</span>
-              <span className="inline-flex h-4 items-center gap-0.5 rounded-[3px] bg-[#5865f2] px-[5px] text-[10px] font-semibold uppercase leading-none text-white">
+              <span className="inline-flex h-4 items-center gap-0.5 rounded-[3px] bg-[#5865f2] px-[5px] text-[10px] leading-none font-semibold text-white uppercase">
                 <svg viewBox="0 0 16 16" className="h-2.5 w-2.5">
                   <path
                     fill="currentColor"
@@ -96,10 +90,10 @@ export function DiscordMock() {
 
                 {/* Description */}
                 <p className="mt-1 text-sm text-[#dbdee1]">
-                  Promoted from <span className="font-medium">Sergeant (E-5)</span> to{" "}
-                  <span className="font-medium">Staff Sergeant (E-6)</span>, effective{" "}
-                  <span className="font-medium">23 MAY 2026</span>. Service record
-                  updated, DA Form 4187 attached.
+                  Promoted from <span className="font-medium">Sergeant (E-5)</span> to{' '}
+                  <span className="font-medium">Staff Sergeant (E-6)</span>, effective{' '}
+                  <span className="font-medium">23 MAY 2026</span>. Service record updated, DA Form
+                  4187 attached.
                 </p>
 
                 {/* Fields */}
@@ -163,5 +157,5 @@ export function DiscordMock() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,55 +1,55 @@
-import Link from "next/link";
-import { Container } from "../ui/container";
-import { Logo } from "../ui/logo";
-import { links } from "@/lib/links";
+import Link from 'next/link'
+import { Container } from '../ui/container'
+import { Logo } from '../ui/logo'
+import { links } from '@/lib/links'
 
 const sections = [
   {
-    title: "Product",
+    title: 'Product',
     items: [
-      { name: "Features", href: "/#features" },
-      { name: "Showcase", href: "/#showcase" },
-      { name: "Pricing", href: "/#pricing" },
-      { name: "Live demo", href: links.demo, external: true },
+      { name: 'Features', href: '/#features' },
+      { name: 'Showcase', href: '/#showcase' },
+      { name: 'Pricing', href: '/#pricing' },
+      { name: 'Live demo', href: links.demo, external: true },
     ],
   },
   {
-    title: "Resources",
+    title: 'Resources',
     items: [
-      { name: "Documentation", href: links.docs, external: true },
-      { name: "API reference", href: links.apiDocs, external: true },
-      { name: "Slack community", href: links.slack, external: true },
-      { name: "GitHub", href: links.github, external: true },
+      { name: 'Documentation', href: links.docs, external: true },
+      { name: 'API reference', href: links.apiDocs, external: true },
+      { name: 'Slack community', href: links.slack, external: true },
+      { name: 'GitHub', href: links.github, external: true },
     ],
   },
   {
-    title: "Get started",
+    title: 'Get started',
     items: [
-      { name: "Sign up", href: links.register, external: true },
-      { name: "Find my organization", href: links.findOrg, external: true },
+      { name: 'Sign up', href: links.register, external: true },
+      { name: 'Find my organization', href: links.findOrg, external: true },
     ],
   },
   {
-    title: "Legal",
+    title: 'Legal',
     items: [
-      { name: "Acceptable Use", href: "/legal/acceptable-use" },
-      { name: "Cookie Policy", href: "/legal/cookies" },
-      { name: "Privacy Policy", href: "/legal/privacy" },
-      { name: "Terms of Service", href: "/legal/terms" },
+      { name: 'Acceptable Use', href: '/legal/acceptable-use' },
+      { name: 'Cookie Policy', href: '/legal/cookies' },
+      { name: 'Privacy Policy', href: '/legal/privacy' },
+      { name: 'Terms of Service', href: '/legal/terms' },
     ],
   },
-];
+]
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-ink-950 text-white/70">
+    <footer className="bg-ink-950 relative overflow-hidden text-white/70">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 -bottom-40 -z-0 h-[40rem] bg-[radial-gradient(ellipse_at_top,_var(--color-brand-600)_0%,_transparent_60%)] opacity-20"
       />
       <div
         aria-hidden
-        className="select-none pointer-events-none absolute -bottom-24 left-1/2 -translate-x-1/2 font-display text-[18rem] font-bold leading-none tracking-tighter text-white/[0.03] sm:text-[24rem]"
+        className="font-display pointer-events-none absolute -bottom-24 left-1/2 -translate-x-1/2 text-[18rem] leading-none font-bold tracking-tighter text-white/[0.03] select-none sm:text-[24rem]"
       >
         PERSCOM
       </div>
@@ -58,8 +58,7 @@ export function Footer() {
           <div className="col-span-2">
             <Logo />
             <p className="mt-5 max-w-xs text-sm text-white/60">
-              Personnel management built for the people running mission-critical
-              operations.
+              Personnel management built for the people running mission-critical operations.
             </p>
           </div>
           {sections.map((s) => (
@@ -93,11 +92,10 @@ export function Footer() {
         </div>
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
           <p className="text-xs text-white/40">
-            &copy; {new Date().getFullYear()} Deschutes Design Group LLC. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Deschutes Design Group LLC. All rights reserved.
           </p>
         </div>
       </Container>
     </footer>
-  );
+  )
 }

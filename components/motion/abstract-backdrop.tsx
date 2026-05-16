@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import clsx from 'clsx'
 
 /**
  * Abstract backdrop in the style of docs.perscom.io:
@@ -11,61 +11,52 @@ import clsx from "clsx";
  */
 export function AbstractBackdrop({
   className,
-  variant = "default",
+  variant = 'default',
 }: {
-  className?: string;
-  variant?: "default" | "inverse" | "subtle";
+  className?: string
+  variant?: 'default' | 'inverse' | 'subtle'
 }) {
-  if (variant === "subtle") {
+  if (variant === 'subtle') {
     return (
       <div
         aria-hidden
-        className={clsx(
-          "pointer-events-none absolute inset-0 -z-10 overflow-hidden",
-          className
-        )}
+        className={clsx('pointer-events-none absolute inset-0 -z-10 overflow-hidden', className)}
       >
-        <div className="absolute inset-0 bg-grid-dark mask-radial opacity-50" />
-        <div className="absolute inset-x-0 top-0 h-[60%] bg-radial-brand" />
+        <div className="bg-grid-dark mask-radial absolute inset-0 opacity-50" />
+        <div className="bg-radial-brand absolute inset-x-0 top-0 h-[60%]" />
       </div>
-    );
+    )
   }
 
-  if (variant === "inverse") {
+  if (variant === 'inverse') {
     return (
       <div
         aria-hidden
-        className={clsx(
-          "pointer-events-none absolute inset-0 -z-10 overflow-hidden",
-          className
-        )}
+        className={clsx('pointer-events-none absolute inset-0 -z-10 overflow-hidden', className)}
       >
-        <div className="absolute inset-0 bg-grid-dark opacity-40 mask-radial" />
-        <div className="absolute inset-x-0 top-0 h-[70%] bg-radial-brand" />
+        <div className="bg-grid-dark mask-radial absolute inset-0 opacity-40" />
+        <div className="bg-radial-brand absolute inset-x-0 top-0 h-[70%]" />
       </div>
-    );
+    )
   }
 
   return (
     <div
       aria-hidden
-      className={clsx(
-        "pointer-events-none absolute inset-0 -z-10 overflow-hidden",
-        className
-      )}
+      className={clsx('pointer-events-none absolute inset-0 -z-10 overflow-hidden', className)}
     >
       {/* Soft brand radial glow — top-leaning, like docs hero */}
-      <div className="absolute inset-x-0 top-0 h-[70%] bg-radial-brand" />
+      <div className="bg-radial-brand absolute inset-x-0 top-0 h-[70%]" />
       {/* Grid pattern */}
-      <div className="absolute inset-0 bg-grid mask-radial opacity-70" />
+      <div className="bg-grid mask-radial absolute inset-0 opacity-70" />
       {/* Subtle second glow lower-left to add depth */}
       <div
         className="absolute -bottom-32 -left-32 h-[28rem] w-[28rem] rounded-full opacity-60 blur-3xl"
         style={{
           background:
-            "radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(37, 99, 235, 0) 70%)",
+            'radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(37, 99, 235, 0) 70%)',
         }}
       />
     </div>
-  );
+  )
 }

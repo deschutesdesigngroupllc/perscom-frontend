@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 import {
   CodeBracketIcon,
   CommandLineIcon,
@@ -6,75 +6,72 @@ import {
   ServerStackIcon,
   ArrowDownTrayIcon,
   ShieldCheckIcon,
-} from "@heroicons/react/24/outline";
-import { Container } from "../ui/container";
-import { Reveal } from "../motion/reveal";
-import { links } from "@/lib/links";
+} from '@heroicons/react/24/outline'
+import { Container } from '../ui/container'
+import { Reveal } from '../motion/reveal'
+import { links } from '@/lib/links'
 
 const reasons = [
   {
     icon: ServerStackIcon,
-    title: "Your infrastructure, your rules",
+    title: 'Your infrastructure, your rules',
     detail:
-      "Run PERSCOM on hardware you control. Pick the region, set the backup policy, define the SLA — it&apos;s your stack.",
+      'Run PERSCOM on hardware you control. Pick the region, set the backup policy, define the SLA — it&apos;s your stack.',
   },
   {
     icon: ShieldCheckIcon,
-    title: "Sensitive data stays put",
+    title: 'Sensitive data stays put',
     detail:
-      "Members&apos; PII never leaves your tenant. Useful for orgs with data-residency obligations or strict legal review.",
+      'Members&apos; PII never leaves your tenant. Useful for orgs with data-residency obligations or strict legal review.',
   },
   {
     icon: CodeBracketIcon,
-    title: "Fork and extend",
+    title: 'Fork and extend',
     detail:
-      "Open Laravel codebase. Add custom routes, custom models, internal tooling — PERSCOM is yours to bend.",
+      'Open Laravel codebase. Add custom routes, custom models, internal tooling — PERSCOM is yours to bend.',
   },
   {
     icon: CubeTransparentIcon,
-    title: "One-click on Railway",
+    title: 'One-click on Railway',
     detail:
-      "Click the button, sign in to Railway, set a few env vars. Database, queue, and app all provisioned for you.",
+      'Click the button, sign in to Railway, set a few env vars. Database, queue, and app all provisioned for you.',
   },
-];
+]
 
 const stack = [
-  "Laravel 13",
-  "PHP 8.4",
-  "MySQL",
-  "Redis",
-  "Horizon",
-  "Passport",
-  "Filament",
-  "Stripe",
-];
+  'Laravel 13',
+  'PHP 8.4',
+  'MySQL',
+  'Redis',
+  'Horizon',
+  'Passport',
+  'Filament',
+  'Stripe',
+]
 
 export function SelfHost() {
   return (
-    <section
-      id="hosting"
-      className="relative overflow-hidden bg-ink-950 py-24 sm:py-32"
-    >
+    <section id="hosting" className="bg-ink-950 relative overflow-hidden py-24 sm:py-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-grid opacity-40 mask-radial"
+        className="bg-grid mask-radial pointer-events-none absolute inset-0 -z-10 opacity-40"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-32 right-1/3 -z-10 h-[32rem] w-[32rem] rounded-full bg-brand-600/15 blur-3xl"
+        className="bg-brand-600/15 pointer-events-none absolute -top-32 right-1/3 -z-10 h-[32rem] w-[32rem] rounded-full blur-3xl"
       />
 
       <Container className="relative">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold tracking-wider text-brand-400 uppercase">
+          <p className="text-brand-400 text-sm font-semibold tracking-wider uppercase">
             Open & self-hostable
           </p>
-          <h2 className="mt-4 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
             Run it on your own hardware.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-white/60">
-            PERSCOM is an open Laravel application. Use the hosted SaaS — or deploy your
-            own instance to Railway in a couple of minutes, no DevOps required.
+            PERSCOM is an open Laravel application. Use the hosted SaaS — or deploy your own
+            instance to Railway in a couple of minutes, no DevOps required.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -117,11 +114,11 @@ export function SelfHost() {
             >
               <div
                 aria-hidden
-                className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-brand-500/15 opacity-0 blur-2xl transition-opacity group-hover:opacity-100"
+                className="bg-brand-500/15 absolute -top-20 -right-20 h-40 w-40 rounded-full opacity-0 blur-2xl transition-opacity group-hover:opacity-100"
               />
               <div className="relative">
                 <div className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.04]">
-                  <r.icon className="h-5 w-5 text-brand-300" />
+                  <r.icon className="text-brand-300 h-5 w-5" />
                 </div>
                 <h3 className="mt-5 font-medium text-white">{r.title}</h3>
                 <p
@@ -144,23 +141,23 @@ export function SelfHost() {
                 {stack.map((s) => (
                   <span
                     key={s}
-                    className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-1 font-mono text-xs text-brand-200"
+                    className="text-brand-200 rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-1 font-mono text-xs"
                   >
                     {s}
                   </span>
                 ))}
               </div>
               <p className="mt-6 text-sm leading-relaxed text-white/55">
-                Standard Laravel stack. If your ops team can run a Laravel app, they can
-                run PERSCOM. The Railway template provisions MySQL, Redis, Horizon
-                workers, and the app container in one go.
+                Standard Laravel stack. If your ops team can run a Laravel app, they can run
+                PERSCOM. The Railway template provisions MySQL, Redis, Horizon workers, and the app
+                container in one go.
               </p>
               <div className="mt-6 flex gap-3">
                 <a
                   href={links.railwayDocs}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-300 hover:text-brand-200"
+                  className="text-brand-300 hover:text-brand-200 inline-flex items-center gap-1.5 text-sm font-medium"
                 >
                   <ArrowDownTrayIcon className="h-4 w-4" />
                   Deployment guide
@@ -178,7 +175,7 @@ export function SelfHost() {
           </Reveal>
 
           <Reveal delay={0.08} className="lg:col-span-7">
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-ink-900/80 shadow-[var(--shadow-ring)]">
+            <div className="bg-ink-900/80 overflow-hidden rounded-2xl border border-white/10 shadow-[var(--shadow-ring)]">
               <div className="flex items-center gap-2 border-b border-white/5 px-4 py-2.5">
                 <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
@@ -189,7 +186,7 @@ export function SelfHost() {
                 </span>
               </div>
               <pre className="overflow-x-auto px-5 py-5 font-mono text-[13px] leading-relaxed text-white/80">
-{`# 1. Clone your fork
+                {`# 1. Clone your fork
 git clone https://github.com/deschutesdesigngroupllc/perscom-app
 cd perscom-app
 
@@ -213,5 +210,5 @@ php artisan serve
         </div>
       </Container>
     </section>
-  );
+  )
 }
