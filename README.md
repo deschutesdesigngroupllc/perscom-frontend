@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PERSCOM Marketing Site
 
-## Getting Started
+Public marketing site for **[PERSCOM](https://perscom.io)** — the personnel command system built for high-performing, mission-critical organizations (police, fire, EMS, military, paramilitary).
 
-First, run the development server:
+Production: [perscom.io](https://perscom.io)
+Product app: [app.perscom.io](https://app.perscom.io)
+Docs: [docs.perscom.io](https://docs.perscom.io)
+
+---
+
+## Stack
+
+- **[Next.js 16](https://nextjs.org)** (App Router, Turbopack, RSC)
+- **[React 19](https://react.dev)**
+- **[TypeScript 5](https://www.typescriptlang.org)**
+- **[Tailwind CSS v4](https://tailwindcss.com)** (CSS-first `@theme`)
+- **[Framer Motion](https://www.framer.com/motion/)** for choreographed transitions
+- **[Headless UI](https://headlessui.com)** + **[Heroicons](https://heroicons.com)**
+- **Inter** + **JetBrains Mono** via `next/font/google` — same type stack as the docs
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # eslint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project layout
 
-## Learn More
+```
+app/
+  layout.tsx              # fonts, metadata, root layout
+  page.tsx                # home — composes every section
+  globals.css             # Tailwind v4 @theme tokens + utilities
+  legal/[slug]/page.tsx   # legal pages (Terms, Privacy, Cookies, AUP)
+  sitemap.ts, robots.ts
 
-To learn more about Next.js, take a look at the following resources:
+components/
+  layout/                 # header, footer
+  sections/               # home-page sections (hero, features, etc.)
+  ui/                     # button, container, logo
+  motion/                 # reveal, marquee, abstract-backdrop
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+lib/
+  links.ts                # canonical external URLs
+  legal.ts                # legal page metadata + GetTerms embed ids
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+public/
+  screenshots/            # product screenshots used on the marketing pages
+  avatars/                # social-proof avatars in the hero
+  logos/                  # tech-stack marks in the logo cloud
+  railway-logo.svg        # real Railway brand mark
+  railway-button.svg      # official "Deploy on Railway" button
+  logo.svg, icon.svg      # PERSCOM brand assets
+```
 
-## Deploy on Vercel
+## Sections (in order)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Hero** — headline, eyebrow, dual CTAs, social proof, dashboard screenshot with 8 floating activity tags
+2. **Logo cloud** — tech-stack strip (Laravel, React, AWS, Docker, etc.)
+3. **Primary features (bento)** — Roster · Ranks · Records
+4. **Personnel record** — full profile screenshot + all 7 record types + 6 profile facets
+5. **Secondary features** — Messaging wizard · Form field editor · Events & RSVP
+6. **Automations** — 3 action types, 10+ trigger pills, screenshot
+7. **Lives in Discord** — realistic Discord embed mockup (HTML/Tailwind)
+8. **Integrations** — REST API, OAuth 2.0 (4 grants), OIDC, JWT SSO, Webhooks, Widgets, PHP SDK, scoped keys + PHP code sample
+9. **Security** — 6 compliance pillars (tenant isolation, encryption, MFA, RBAC, audit log, backups)
+10. **Self-host** — one-click Railway deploy + quick-start terminal
+11. **Pricing** — single plan, monthly/yearly toggle
+12. **FAQ** — accordion
+13. **CTA**
+14. **Footer**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Design system
+
+CSS-first Tailwind v4 with brand tokens defined in `app/globals.css`:
+
+- **Surface:** `#090b0f` (matches docs.perscom.io dark)
+- **Brand:** `#2563EB` (blue-600) + the full blue scale, **no other hues**
+- **Type:** Inter (display + body), JetBrains Mono (code)
+- **Backdrops:** `<AbstractBackdrop />` — radial brand glow + subtle grid pattern, masked
+
+## Conventions
+
+- Lowercase, kebab-case filenames for all components
+- Server components by default; `"use client"` only when state, refs, or animations require it
+- All external URLs in `lib/links.ts` — never hard-code
+- Screenshots sized to native resolution (e.g. `3600×1902`) with `next/image` handling the optimization
+
+## Deployment
+
+This site is designed to deploy to **[Vercel](https://vercel.com)** with zero configuration.
+
+The product itself (the Laravel app) is open-source and self-hostable on **Railway** — see [deschutesdesigngroupllc/perscom-app](https://github.com/deschutesdesigngroupllc/perscom-app).
+
+## License
+
+© Deschutes Design Group LLC. All rights reserved.
