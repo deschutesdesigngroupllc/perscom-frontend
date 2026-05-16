@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CloseButton, Popover, PopoverButton, PopoverPanel, Transition } from '@headlessui/react'
+import { Popover, PopoverButton, PopoverPanel, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
   XMarkIcon,
@@ -165,83 +165,154 @@ function isMenu(item: NavItem): item is { name: string; menu: NavGroup[] } {
   return 'menu' in item
 }
 
-function MenuPanel({ groups }: { groups: NavGroup[] }) {
+function HoverMenu({ name, groups }: { name: string; groups: NavGroup[] }) {
+  const [open, setOpen] = useState(false)
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const wide = groups.length > 1
+
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current)
+      closeTimer.current = null
+    }
+  }
+  const scheduleClose = () => {
+    cancelClose()
+    closeTimer.current = setTimeout(() => setOpen(false), 120)
+  }
+  const openNow = () => {
+    cancelClose()
+    setOpen(true)
+  }
+
+  useEffect(() => {
+    if (!open) return
+    const onDocClick = (e: MouseEvent) => {
+      if (!wrapperRef.current?.contains(e.target as Node)) setOpen(false)
+    }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', onDocClick)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDocClick)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  useEffect(() => () => cancelClose(), [])
+
   return (
-    <PopoverPanel
-      anchor={{ to: 'bottom', gap: 12 }}
-      transition
-      className={clsx(
-        'bg-ink-900/95 z-50 rounded-2xl border border-white/10 p-2 shadow-2xl shadow-black/50 backdrop-blur-xl',
-        'data-closed:translate-y-1 data-closed:opacity-0',
-        'transition duration-150 ease-out data-closed:duration-100',
-        wide ? 'w-[640px]' : 'w-80',
-      )}
-    >
-      <div className={clsx('grid gap-1', wide && 'grid-cols-2')}>
-        {groups.map((group) => (
-          <div key={group.name} className="p-2">
-            <p className="text-brand-300/80 px-3 pt-1 pb-2 text-[11px] font-semibold tracking-wider uppercase">
-              {group.name}
-            </p>
-            <ul className="flex flex-col">
-              {group.items.map((item) => {
-                const Icon = item.icon
-                const content = (
-                  <>
-                    {Icon ? (
-                      <span className="bg-brand-500/10 text-brand-300 ring-brand-500/20 mt-0.5 grid h-9 w-9 flex-none place-items-center rounded-lg ring-1 ring-inset">
-                        <Icon className="h-5 w-5" />
-                      </span>
-                    ) : null}
-                    <span className="flex-1">
-                      <span className="block text-sm font-medium text-white">{item.name}</span>
-                      {item.description ? (
-                        <span className="mt-0.5 block text-xs leading-relaxed text-white/55">
-                          {item.description}
-                        </span>
-                      ) : null}
-                    </span>
-                  </>
-                )
-                const className =
-                  'flex items-start gap-3 rounded-xl p-3 transition hover:bg-white/5'
-                return (
-                  <li key={item.name}>
-                    {item.external ? (
-                      <CloseButton
-                        as="a"
-                        href={item.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className={className}
+    <div ref={wrapperRef} className="relative" onMouseEnter={openNow} onMouseLeave={scheduleClose}>
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="menu"
+        onClick={() => setOpen((v) => !v)}
+        onFocus={openNow}
+        className={clsx(
+          'inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm font-medium transition outline-none',
+          open ? 'bg-white/10 text-white' : 'text-white/70 hover:bg-white/10 hover:text-white',
+        )}
+      >
+        {name}
+        <ChevronDownIcon
+          className={clsx('h-3.5 w-3.5 transition', open ? 'rotate-180' : 'rotate-0')}
+        />
+      </button>
+
+      <Transition
+        show={open}
+        enter="duration-150 ease-out"
+        enterFrom="opacity-0 -translate-y-1"
+        enterTo="opacity-100 translate-y-0"
+        leave="duration-100 ease-in"
+        leaveFrom="opacity-100 translate-y-0"
+        leaveTo="opacity-0 -translate-y-1"
+      >
+        <div
+          role="menu"
+          className={clsx(
+            'absolute top-full left-1/2 z-50 -translate-x-1/2 pt-3',
+            wide ? 'w-[640px]' : 'w-80',
+          )}
+        >
+          <div className="bg-ink-900/95 rounded-2xl border border-white/10 p-2 shadow-2xl shadow-black/50 backdrop-blur-xl">
+            <div className={clsx('grid gap-1', wide && 'grid-cols-2')}>
+              {groups.map((group) => (
+                <div key={group.name} className="p-2">
+                  <p className="text-brand-300/80 px-3 pt-1 pb-2 text-[11px] font-semibold tracking-wider uppercase">
+                    {group.name}
+                  </p>
+                  <ul className="flex flex-col">
+                    {group.items.map((item) => {
+                      const Icon = item.icon
+                      const content = (
+                        <>
+                          {Icon ? (
+                            <span className="bg-brand-500/10 text-brand-300 ring-brand-500/20 mt-0.5 grid h-9 w-9 flex-none place-items-center rounded-lg ring-1 ring-inset">
+                              <Icon className="h-5 w-5" />
+                            </span>
+                          ) : null}
+                          <span className="flex-1">
+                            <span className="block text-sm font-medium text-white">
+                              {item.name}
+                            </span>
+                            {item.description ? (
+                              <span className="mt-0.5 block text-xs leading-relaxed text-white/55">
+                                {item.description}
+                              </span>
+                            ) : null}
+                          </span>
+                        </>
+                      )
+                      const className =
+                        'flex items-start gap-3 rounded-xl p-3 transition hover:bg-white/5'
+                      return (
+                        <li key={item.name}>
+                          {item.external ? (
+                            <a
+                              href={item.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              className={className}
+                              onClick={() => setOpen(false)}
+                            >
+                              {content}
+                            </a>
+                          ) : (
+                            <Link
+                              href={item.href}
+                              className={className}
+                              onClick={() => setOpen(false)}
+                            >
+                              {content}
+                            </Link>
+                          )}
+                        </li>
+                      )
+                    })}
+                  </ul>
+                  {group.footer ? (
+                    <div className="mt-2 border-t border-white/5 px-3 pt-3">
+                      <Link
+                        href={group.footer.href}
+                        onClick={() => setOpen(false)}
+                        className="text-brand-300 hover:text-brand-200 text-xs font-medium"
                       >
-                        {content}
-                      </CloseButton>
-                    ) : (
-                      <CloseButton as={Link} href={item.href} className={className}>
-                        {content}
-                      </CloseButton>
-                    )}
-                  </li>
-                )
-              })}
-            </ul>
-            {group.footer ? (
-              <div className="mt-2 border-t border-white/5 px-3 pt-3">
-                <CloseButton
-                  as={Link}
-                  href={group.footer.href}
-                  className="text-brand-300 hover:text-brand-200 text-xs font-medium"
-                >
-                  {group.footer.name}
-                </CloseButton>
-              </div>
-            ) : null}
+                        {group.footer.name}
+                      </Link>
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </PopoverPanel>
+        </div>
+      </Transition>
+    </div>
   )
 }
 
@@ -273,29 +344,7 @@ export function Header() {
             {nav.map((item) => (
               <li key={item.name}>
                 {isMenu(item) ? (
-                  <Popover>
-                    {({ open }) => (
-                      <>
-                        <PopoverButton
-                          className={clsx(
-                            'inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm font-medium transition outline-none',
-                            open
-                              ? 'bg-white/10 text-white'
-                              : 'text-white/70 hover:bg-white/10 hover:text-white',
-                          )}
-                        >
-                          {item.name}
-                          <ChevronDownIcon
-                            className={clsx(
-                              'h-3.5 w-3.5 transition',
-                              open ? 'rotate-180' : 'rotate-0',
-                            )}
-                          />
-                        </PopoverButton>
-                        <MenuPanel groups={item.menu} />
-                      </>
-                    )}
-                  </Popover>
+                  <HoverMenu name={item.name} groups={item.menu} />
                 ) : (
                   <Link
                     href={item.href}
