@@ -1,26 +1,123 @@
 @import "tailwindcss";
 
+@theme {
+  /* Match docs.perscom.io palette */
+  --color-ink-50: #f5f7fa;
+  --color-ink-100: #e7ecf2;
+  --color-ink-200: #c9d2dd;
+  --color-ink-300: #97a4b6;
+  --color-ink-400: #5f6e83;
+  --color-ink-500: #3c485c;
+  --color-ink-600: #232c3d;
+  --color-ink-700: #16192a;
+  --color-ink-800: #0e121b;
+  --color-ink-900: #090b0f;
+  --color-ink-950: #05070a;
+
+  /* Brand = blue-600 #2563eb (original perscom blue). Accents stay in blue family. */
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+
+  --color-surface: #090b0f;
+  --color-surface-elevated: #0e121b;
+
+  --font-sans: var(--font-inter), "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-display: var(--font-inter), "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: var(--font-mono), "JetBrains Mono Fallback", "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --shadow-glow: 0 0 80px -10px rgba(37, 99, 235, 0.5);
+  --shadow-ring: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 30px 60px -20px rgba(5, 7, 10, 0.7);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background: var(--color-surface);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-surface);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-brand-600);
+  color: white;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@utility bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(9, 11, 15, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(9, 11, 15, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@utility bg-dot {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@utility bg-radial-brand {
+  background: radial-gradient(
+    49.63% 57.02% at 58.99% -7.2%,
+    rgba(37, 99, 235, 0.20) 39.4%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+@utility bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@utility mask-radial {
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 40%, transparent 100%);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-marquee { animation: marquee 40s linear infinite; }
+.animate-blob { animation: blob 18s ease-in-out infinite; }
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 6s linear infinite;
 }
