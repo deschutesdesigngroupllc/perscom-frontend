@@ -9,6 +9,7 @@ import { Automations } from '@/components/sections/automations'
 import { LivesInDiscord } from '@/components/sections/lives-in-discord'
 import { Integrations } from '@/components/sections/integrations'
 import { Security } from '@/components/sections/security'
+import { Cloud } from '@/components/sections/cloud'
 import { SelfHost } from '@/components/sections/self-host'
 import { Pricing } from '@/components/sections/pricing'
 import { Faqs } from '@/components/sections/faqs'
@@ -28,6 +29,7 @@ export default function HomePage() {
         <LivesInDiscord />
         <Integrations />
         <Security />
+        <Cloud />
         <SelfHost />
         <Pricing />
         <Faqs />

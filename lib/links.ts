@@ -1,7 +1,7 @@
 export const links = {
-  register: 'https://perscom.io/register',
-  findOrg: 'https://perscom.io/find-my-organization',
+  register: 'https://app.perscom.io/register',
   demo: 'https://demo.perscom.io',
+  app: 'https://app.perscom.io',
   docs: 'https://docs.perscom.io',
   apiDocs: 'https://docs.perscom.io/api-reference/introduction',
   slack: 'https://perscom.io/slack',

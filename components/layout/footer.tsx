@@ -26,7 +26,7 @@ const sections = [
     title: 'Get started',
     items: [
       { name: 'Sign up', href: links.register, external: true },
-      { name: 'Find my organization', href: links.findOrg, external: true },
+      { name: 'Live demo', href: links.demo, external: true },
     ],
   },
   {
@@ -45,15 +45,9 @@ export function Footer() {
     <footer className="bg-ink-950 relative overflow-hidden text-white/70">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 -bottom-40 -z-0 h-[40rem] bg-[radial-gradient(ellipse_at_top,_var(--color-brand-600)_0%,_transparent_60%)] opacity-20"
+        className="pointer-events-none absolute inset-0 -z-0 bg-[radial-gradient(ellipse_at_top,_var(--color-brand-600)_0%,_transparent_70%)] opacity-20"
       />
-      <div
-        aria-hidden
-        className="font-display pointer-events-none absolute -bottom-24 left-1/2 -translate-x-1/2 text-[18rem] leading-none font-bold tracking-tighter text-white/[0.03] select-none sm:text-[24rem]"
-      >
-        PERSCOM
-      </div>
-      <Container className="relative pt-20 pb-10">
+      <Container className="relative pt-20 pb-20">
         <div className="grid grid-cols-2 gap-10 lg:grid-cols-6">
           <div className="col-span-2">
             <Logo />
@@ -96,6 +90,12 @@ export function Footer() {
           </p>
         </div>
       </Container>
+      <div
+        aria-hidden
+        className="font-display pointer-events-none relative -mb-[0.15em] w-full text-center text-[7rem] leading-[0.8] font-bold tracking-tighter text-white/[0.03] select-none sm:text-[18rem] lg:text-[24rem]"
+      >
+        PERSCOM
+      </div>
     </footer>
   )
 }
