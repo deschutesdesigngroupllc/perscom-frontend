@@ -359,25 +359,33 @@ export function Header() {
 
           <div className="hidden items-center gap-3 justify-self-end lg:flex">
             <a
+              href={links.github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View PERSCOM on GitHub"
+              title="View on GitHub"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/70 transition hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden>
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M12 .5C5.73.5.67 5.59.67 11.86c0 5.02 3.24 9.27 7.74 10.77.57.11.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.15.69-3.82-1.34-3.82-1.34-.51-1.31-1.26-1.66-1.26-1.66-1.03-.71.08-.69.08-.69 1.14.08 1.74 1.18 1.74 1.18 1.01 1.74 2.66 1.24 3.31.95.1-.74.4-1.24.72-1.53-2.51-.29-5.16-1.27-5.16-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 2.87-.39c.97 0 1.95.13 2.87.39 2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.73.8 1.18 1.82 1.18 3.07 0 4.39-2.66 5.36-5.19 5.64.41.36.78 1.07.78 2.16 0 1.56-.01 2.81-.01 3.19 0 .31.2.67.79.55 4.49-1.5 7.73-5.75 7.73-10.77C23.33 5.59 18.27.5 12 .5Z"
+                />
+              </svg>
+            </a>
+            <a
               href={links.railway}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-sm font-medium text-white/80 transition hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
-              title="Deploy your own instance on Railway"
+              aria-label="Deploy your own instance on Railway"
+              title="Self-host on Railway"
+              className="inline-flex h-9 items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 text-sm font-medium whitespace-nowrap text-white/80 transition hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
             >
               <span className="grid h-5 w-5 flex-none place-items-center rounded-full bg-white">
-                <Image
-                  src="/railway-logo.svg"
-                  alt=""
-                  width={12}
-                  height={12}
-                  className="h-3 w-3"
-                />
+                <Image src="/railway-logo.svg" alt="" width={12} height={12} className="h-3 w-3" />
               </span>
-              Self-host
-              <span className="hidden text-white/40 group-hover:text-white/60 xl:inline">
-                on Railway
-              </span>
+              Deploy
             </a>
             <Button href={links.register} size="sm">
               Start free trial
@@ -458,10 +466,25 @@ export function Header() {
                     )
                   })}
                 </ul>
-                <div className="mt-2 border-t border-white/10 pt-3">
-                  <Button href={links.register} className="w-full">
+                <div className="mt-2 flex items-center gap-2 border-t border-white/10 pt-3">
+                  <Button href={links.register} className="flex-1">
                     Start free trial
                   </Button>
+                  <a
+                    href={links.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="View PERSCOM on GitHub"
+                    className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/80 transition hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden>
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M12 .5C5.73.5.67 5.59.67 11.86c0 5.02 3.24 9.27 7.74 10.77.57.11.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.15.69-3.82-1.34-3.82-1.34-.51-1.31-1.26-1.66-1.26-1.66-1.03-.71.08-.69.08-.69 1.14.08 1.74 1.18 1.74 1.18 1.01 1.74 2.66 1.24 3.31.95.1-.74.4-1.24.72-1.53-2.51-.29-5.16-1.27-5.16-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 2.87-.39c.97 0 1.95.13 2.87.39 2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.73.8 1.18 1.82 1.18 3.07 0 4.39-2.66 5.36-5.19 5.64.41.36.78 1.07.78 2.16 0 1.56-.01 2.81-.01 3.19 0 .31.2.67.79.55 4.49-1.5 7.73-5.75 7.73-10.77C23.33 5.59 18.27.5 12 .5Z"
+                      />
+                    </svg>
+                  </a>
                 </div>
               </PopoverPanel>
             </Transition>

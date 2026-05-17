@@ -91,7 +91,7 @@ export function SelfHost() {
               />
             </a>
             <a
-              href={links.repo}
+              href={links.github}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-white/80 transition hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
