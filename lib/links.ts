@@ -4,7 +4,7 @@ export const links = {
   app: 'https://app.perscom.io',
   docs: 'https://docs.perscom.io',
   apiDocs: 'https://docs.perscom.io/api-reference/introduction',
-  slack: 'https://perscom.io/slack',
+  slack: '/slack',
   github: 'https://github.com/deschutesdesigngroupllc/perscom-app',
   railway:
     'https://railway.com/deploy/perscom?referralCode=O-oe8s&utm_medium=integration&utm_source=template&utm_campaign=generic',

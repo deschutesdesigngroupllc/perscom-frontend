@@ -20,6 +20,7 @@ import {
   BookOpenIcon,
   QuestionMarkCircleIcon,
   PlayCircleIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import { Container } from '../ui/container'
@@ -48,19 +49,19 @@ const productMenu: NavGroup[] = [
     name: 'Personnel',
     items: [
       {
-        name: 'Roster & ranks',
+        name: 'Roster & Ranks',
         description: 'Org hierarchy, paygrades, and progression rules.',
         href: '/#features',
         icon: UsersIcon,
       },
       {
-        name: 'Personnel record',
+        name: 'Personnel Record',
         description: 'Seven record types with MTD / QTD / YTD analytics.',
         href: '/#personnel',
         icon: IdentificationIcon,
       },
       {
-        name: 'Forms & workflows',
+        name: 'Forms & Workflows',
         description: 'Submissions, approvals, and routing.',
         href: '/#showcase',
         icon: Squares2X2Icon,
@@ -77,13 +78,13 @@ const productMenu: NavGroup[] = [
         icon: BoltIcon,
       },
       {
-        name: 'Discord integration',
+        name: 'Discord & Slack',
         description: 'Lives where your unit already talks.',
         href: '/#discord',
         icon: ChatBubbleLeftRightIcon,
       },
       {
-        name: 'API & integrations',
+        name: 'API & Integrations',
         description: 'Full REST API and PHP SDK.',
         href: '/#integrations',
         icon: CodeBracketSquareIcon,
@@ -109,13 +110,13 @@ const hostingMenu: NavGroup[] = [
         icon: CloudIcon,
       },
       {
-        name: 'Self-host on Railway',
+        name: 'Deploy on Railway',
         description: 'One-click deploy to your own infrastructure.',
         href: '/#hosting',
         icon: ServerStackIcon,
       },
     ],
-    footer: { name: 'See pricing →', href: '/#pricing' },
+    footer: { name: 'See Pricing →', href: '/#pricing' },
   },
 ]
 
@@ -131,14 +132,14 @@ const resourcesMenu: NavGroup[] = [
         external: true,
       },
       {
-        name: 'API reference',
+        name: 'API Reference',
         description: 'Endpoints, schemas, and examples.',
         href: links.apiDocs,
         icon: CodeBracketSquareIcon,
         external: true,
       },
       {
-        name: 'Live demo',
+        name: 'Live Demo',
         description: 'Poke around a real instance.',
         href: links.demo,
         icon: PlayCircleIcon,
@@ -149,6 +150,12 @@ const resourcesMenu: NavGroup[] = [
         description: 'Answers to the most common questions.',
         href: '/#faq',
         icon: QuestionMarkCircleIcon,
+      },
+      {
+        name: 'Slack Community',
+        description: 'Get help and swap notes with other operators.',
+        href: links.slack,
+        icon: UserGroupIcon,
       },
     ],
   },
@@ -379,7 +386,7 @@ export function Header() {
               target="_blank"
               rel="noreferrer"
               aria-label="Deploy your own instance on Railway"
-              title="Self-host on Railway"
+              title="Deploy on Railway"
               className="inline-flex h-9 items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 text-sm font-medium whitespace-nowrap text-white/80 transition hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
             >
               <span className="grid h-5 w-5 flex-none place-items-center rounded-full bg-white">
@@ -388,7 +395,7 @@ export function Header() {
               Deploy
             </a>
             <Button href={links.register} size="sm">
-              Start free trial
+              Start Free Trial
             </Button>
           </div>
 
@@ -468,7 +475,7 @@ export function Header() {
                 </ul>
                 <div className="mt-2 flex items-center gap-2 border-t border-white/10 pt-3">
                   <Button href={links.register} className="flex-1">
-                    Start free trial
+                    Start Free Trial
                   </Button>
                   <a
                     href={links.github}

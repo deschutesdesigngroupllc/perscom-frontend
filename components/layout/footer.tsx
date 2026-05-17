@@ -9,12 +9,12 @@ const sections = [
   {
     title: 'Product',
     items: [
-      { name: 'Roster & ranks', href: '/#features' },
-      { name: 'Personnel record', href: '/#personnel' },
-      { name: 'Forms & workflows', href: '/#showcase' },
+      { name: 'Roster & Ranks', href: '/#features' },
+      { name: 'Personnel Record', href: '/#personnel' },
+      { name: 'Forms & Workflows', href: '/#showcase' },
       { name: 'Automations', href: '/#automations' },
-      { name: 'Discord integration', href: '/#discord' },
-      { name: 'API & integrations', href: '/#integrations' },
+      { name: 'Discord & Slack', href: '/#discord' },
+      { name: 'API & Integrations', href: '/#integrations' },
       { name: 'Security', href: '/#security' },
     ],
   },
@@ -22,7 +22,7 @@ const sections = [
     title: 'Hosting',
     items: [
       { name: 'PERSCOM Cloud', href: '/#cloud' },
-      { name: 'Self-host on Railway', href: '/#hosting' },
+      { name: 'Deploy on Railway', href: '/#hosting' },
       { name: 'Pricing', href: '/#pricing' },
     ],
   },
@@ -30,9 +30,10 @@ const sections = [
     title: 'Resources',
     items: [
       { name: 'Documentation', href: links.docs, external: true },
-      { name: 'API reference', href: links.apiDocs, external: true },
-      { name: 'Live demo', href: links.demo, external: true },
+      { name: 'API Reference', href: links.apiDocs, external: true },
+      { name: 'Live Demo', href: links.demo, external: true },
       { name: 'FAQ', href: '/#faq' },
+      { name: 'Slack Community', href: links.slack },
     ],
   },
   {
@@ -63,7 +64,7 @@ export function Footer() {
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button href={links.register} size="sm">
-                Start free trial
+                Start Free Trial
               </Button>
               <Button href={links.railway} variant="secondary" size="sm">
                 <span className="grid h-4 w-4 flex-none place-items-center rounded-full bg-white">
@@ -75,7 +76,7 @@ export function Footer() {
                     className="h-2.5 w-2.5"
                   />
                 </span>
-                Self-host
+                Deploy
               </Button>
             </div>
           </div>
