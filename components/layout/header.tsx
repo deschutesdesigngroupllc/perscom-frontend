@@ -365,7 +365,15 @@ export function Header() {
               className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-sm font-medium text-white/80 transition hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
               title="Deploy your own instance on Railway"
             >
-              <Image src="/railway-logo.svg" alt="" width={16} height={16} className="h-4 w-4" />
+              <span className="grid h-5 w-5 flex-none place-items-center rounded-full bg-white">
+                <Image
+                  src="/railway-logo.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
+                />
+              </span>
               Self-host
               <span className="hidden text-white/40 group-hover:text-white/60 xl:inline">
                 on Railway

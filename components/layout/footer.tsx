@@ -7,10 +7,21 @@ const sections = [
   {
     title: 'Product',
     items: [
-      { name: 'Features', href: '/#features' },
-      { name: 'Showcase', href: '/#showcase' },
+      { name: 'Roster & ranks', href: '/#features' },
+      { name: 'Personnel record', href: '/#personnel' },
+      { name: 'Forms & workflows', href: '/#showcase' },
+      { name: 'Automations', href: '/#automations' },
+      { name: 'Discord integration', href: '/#discord' },
+      { name: 'API & integrations', href: '/#integrations' },
+      { name: 'Security', href: '/#security' },
+    ],
+  },
+  {
+    title: 'Hosting',
+    items: [
+      { name: 'PERSCOM Cloud', href: '/#cloud' },
+      { name: 'Self-host on Railway', href: '/#hosting' },
       { name: 'Pricing', href: '/#pricing' },
-      { name: 'Live demo', href: links.demo, external: true },
     ],
   },
   {
@@ -18,15 +29,10 @@ const sections = [
     items: [
       { name: 'Documentation', href: links.docs, external: true },
       { name: 'API reference', href: links.apiDocs, external: true },
+      { name: 'Live demo', href: links.demo, external: true },
+      { name: 'FAQ', href: '/#faq' },
       { name: 'Slack community', href: links.slack, external: true },
       { name: 'GitHub', href: links.github, external: true },
-    ],
-  },
-  {
-    title: 'Get started',
-    items: [
-      { name: 'Sign up', href: links.register, external: true },
-      { name: 'Live demo', href: links.demo, external: true },
     ],
   },
   {
