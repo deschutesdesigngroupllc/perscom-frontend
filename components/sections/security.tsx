@@ -25,13 +25,13 @@ const pillars = [
     icon: ShieldCheckIcon,
     title: 'MFA & SSO',
     detail:
-      'TOTP-based multi-factor authentication for every account. SSO via OAuth 2.0 / OIDC for orgs that need centralized identity.',
+      'Authenticator-app MFA with recovery codes or email codes — and organizations can require it for everyone. SSO via OAuth 2.0 / OpenID Connect with signed ID tokens.',
   },
   {
     icon: KeyIcon,
     title: 'Role-based access control',
     detail:
-      'Granular permissions per role, per page, per record type. Decide who sees what — down to the field level — and audit it.',
+      'Granular permissions per role, per page, and per record type. AI features and API keys inherit the same permissions — nothing sees more than it should.',
   },
   {
     icon: ClipboardDocumentListIcon,
@@ -43,7 +43,7 @@ const pillars = [
     icon: CloudArrowUpIcon,
     title: 'Automated backups',
     detail:
-      'Daily encrypted backups with point-in-time recovery. Disaster-readiness baked in, not bolted on.',
+      'Daily encrypted backups of every organization. Disaster-readiness baked in, not bolted on.',
   },
 ]
 

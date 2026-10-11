@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { ArrowRightIcon, PlayCircleIcon } from '@heroicons/react/24/solid'
 import { Container } from '../ui/container'
 import { Button } from '../ui/button'
@@ -15,28 +16,29 @@ export function Hero() {
 
       <Container className="relative">
         <div className="mx-auto flex max-w-6xl flex-col items-center text-center">
-          <a
-            href={links.docs}
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            href="/#ai"
             className="group mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80 backdrop-blur-md transition hover:border-white/20 hover:bg-white/10"
           >
             <span className="relative flex h-2 w-2">
               <span className="bg-brand-400 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
               <span className="bg-brand-400 relative inline-flex h-2 w-2 rounded-full" />
             </span>
-            <span className="text-white/80">Real-time webhooks &amp; OIDC are live</span>
+            <span className="text-white/80">
+              New: connect Claude &amp; Cursor to your roster with MCP
+            </span>
             <ArrowRightIcon className="h-3.5 w-3.5 text-white/60 transition group-hover:translate-x-0.5" />
-          </a>
+          </Link>
 
           <h1 className="font-display text-4xl leading-[1.05] font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            The personnel command system
+            The AI-powered personnel platform
             <span className="block text-white/55">for high-performing organizations.</span>
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-balance text-white/65 sm:text-xl">
-            Mission-critical tools purpose-built for police, fire, EMS, military, and public safety
-            agencies. Centralize records, streamline communications, and run a tighter operation.
+            PERSCOM builds your organization in minutes, answers questions about your people right
+            inside Claude and Cursor, and runs readiness and promotions on autopilot — built for
+            military, police, fire, EMS, and public safety teams.
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
@@ -112,18 +114,18 @@ export function Hero() {
           />
           <FloatingTag
             className="top-[44%] -left-10"
-            icon="⚡"
+            icon="✦"
             tone="brand"
-            label="Webhook fired"
-            value="rankrecord.created"
-            mono
+            label="Copilot proposal"
+            value="3 promotions ready"
           />
           <FloatingTag
             className="top-[40%] -right-10"
             icon="◉"
-            tone="emerald"
-            label="Roster sync"
-            value="247 active"
+            tone="brand"
+            label="MCP"
+            value="Claude connected"
+            mono
           />
           <FloatingTag
             className="top-[72%] -left-6"
@@ -141,17 +143,17 @@ export function Hero() {
           />
           <FloatingTag
             className="-bottom-6 left-[12%]"
-            icon="📄"
-            tone="rose"
-            label="DA 4187"
-            value="Awaiting approval"
+            icon="⏱"
+            tone="amber"
+            label="Qualification expiring"
+            value="CLS · 12 days"
           />
           <FloatingTag
             className="right-[14%] -bottom-7"
-            icon="🎓"
+            icon="📈"
             tone="brand"
-            label="Training record"
-            value="M4 Qualification"
+            label="Unit readiness"
+            value="Alpha Co · 94%"
           />
         </div>
       </Container>

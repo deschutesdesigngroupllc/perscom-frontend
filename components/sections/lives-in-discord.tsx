@@ -11,7 +11,7 @@ type Platform = 'discord' | 'slack'
 
 const platforms: Record<Platform, { label: string; accent: string }> = {
   discord: { label: 'Discord', accent: 'text-[#5865f2]' },
-  slack: { label: 'Slack', accent: 'text-[#36c5f0]' },
+  slack: { label: 'Slack · Soon', accent: 'text-[#36c5f0]' },
 }
 
 const highlights = [
@@ -25,13 +25,13 @@ const highlights = [
     icon: ChatBubbleLeftRightIcon,
     title: 'Real embeds, not pings',
     description:
-      'Rich embeds and Block Kit attachments with rank, citation, paygrade, and effective date. Your members get the whole story in one message.',
+      'Rich Discord embeds with the member, rank, award, unit, and a link straight to the record. Your members get the whole story in one message.',
   },
   {
     icon: CodeBracketIcon,
     title: 'Webhooks + a real API',
     description:
-      'Discord and Slack are two of many. Twilio SMS, email, generic webhooks, and OAuth/OIDC for your own bots — wire it however you run ops.',
+      'Discord is one of many. Twilio SMS, email, generic webhooks, and OAuth/OIDC for your own bots — with Slack support on the way.',
   },
 ]
 

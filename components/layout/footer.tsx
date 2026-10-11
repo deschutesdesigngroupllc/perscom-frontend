@@ -9,11 +9,13 @@ const sections = [
   {
     title: 'Product',
     items: [
+      { name: 'AI Platform', href: '/#ai' },
       { name: 'Roster & Ranks', href: '/#features' },
       { name: 'Personnel Record', href: '/#personnel' },
+      { name: 'Readiness & Promotions', href: '/#readiness' },
       { name: 'Forms & Workflows', href: '/#showcase' },
       { name: 'Automations', href: '/#automations' },
-      { name: 'Discord & Slack', href: '/#discord' },
+      { name: 'Discord & Notifications', href: '/#discord' },
       { name: 'API & Integrations', href: '/#integrations' },
       { name: 'Security', href: '/#security' },
     ],

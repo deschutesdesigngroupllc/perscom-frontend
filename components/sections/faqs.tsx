@@ -7,6 +7,18 @@ import { links } from '@/lib/links'
 
 const faqs = [
   {
+    q: 'How does PERSCOM use AI?',
+    a: 'Three ways. The AI Organization Builder drafts your ranks, units, positions, and awards from a short description. Command Copilot finds members and drafts changes like promotions for you to approve — nothing is changed without your sign-off. And every organization gets an MCP server so you can ask Claude, Cursor, or another MCP-compatible tool about your personnel.',
+  },
+  {
+    q: 'Can AI change our records without us knowing?',
+    a: 'No. Command Copilot only proposes changes; an administrator reviews and approves them, and every change is checked against that person’s permissions and recorded in the audit log. MCP connections are read-only.',
+  },
+  {
+    q: 'What can a connected AI tool see?',
+    a: 'Only what the signed-in member’s PERSCOM account can see. Each person connects with their own account and approves the access when signing in. Queries run against your organization’s isolated tenant.',
+  },
+  {
     q: 'What kind of customer support is available?',
     a: 'Email support, a public Slack community, a comprehensive knowledge base, and full API reference. Our team responds quickly and we treat every report as a priority.',
   },
@@ -19,8 +31,8 @@ const faqs = [
     a: 'Yes. We ship a full REST API, CLI, OAuth 2.0 + OIDC providers, real-time webhooks, and embeddable widgets — so PERSCOM slots into the stack you already run.',
   },
   {
-    q: 'Can I use my own custom domain?',
-    a: 'Yes. On the Professional plan you can route your account to any subdomain or apex domain you control.',
+    q: 'Can I choose my own address?',
+    a: 'Yes. Every organization picks its own perscom.io subdomain, and you can change it from your settings at any time.',
   },
   {
     q: 'Can I try PERSCOM before I subscribe?',
@@ -32,7 +44,7 @@ const faqs = [
   },
   {
     q: 'How secure is our data?',
-    a: 'Each organization is its own isolated tenant. We use data encryption in transit and at rest, role-based access control, optional MFA, and full audit logging across the platform.',
+    a: 'Each organization is its own isolated tenant. We use data encryption in transit and at rest, role-based access control, multi-factor authentication your organization can require, and full audit logging across the platform.',
   },
   {
     q: 'Who is PERSCOM designed for?',

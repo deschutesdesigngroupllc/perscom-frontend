@@ -44,7 +44,7 @@ const included = [
   'Daily encrypted backups',
   '99.9% uptime SLA',
   'Free SSL on a perscom.io subdomain',
-  'Custom domain support',
+  'Custom subdomain',
   'All integrations & API access',
 ]
 

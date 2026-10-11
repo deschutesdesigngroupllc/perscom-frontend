@@ -7,7 +7,7 @@ const features = [
   {
     title: 'Roster you can run an op from',
     description:
-      'Org hierarchy from group → battalion → company → detachment. Real-time online status, leave status, and assignment — searchable, filterable, formation-ready.',
+      'Nested unit hierarchy from battalion → company → platoon. Online status, duty status, and readiness badges on every member — searchable, filterable, and printable as an org chart.',
     image: '/screenshots/roster.png',
     icon: UsersIcon,
     accent: 'from-brand-500 to-brand-400',
@@ -16,7 +16,7 @@ const features = [
   {
     title: 'Rank & paygrade engine',
     description:
-      'Full E-1 through O-10 (or build your own) with insignia, abbreviations, paygrades, and category-driven progression rules.',
+      'Full E-1 through O-10 (or build your own) with insignia, abbreviations, paygrades, and per-rank promotion requirements.',
     image: '/screenshots/ranks.png',
     icon: AdjustmentsHorizontalIcon,
     accent: 'from-brand-700 to-brand-500',

@@ -24,15 +24,15 @@ const features = [
     name: 'Custom forms & fields',
     summary: 'Build any form your SOP requires.',
     description:
-      'Field-level configuration: type (text, select, file, date), default values, validation rules, conditional visibility. Render DA 4187, after-action reports, recruitment apps, or anything else your unit submits.',
+      'Fifteen field types with defaults, validation rules, and conditional visibility. Build DA 4187s, after-action reports, recruitment applications, or anything else your unit submits.',
     image: '/screenshots/form-field-editor.png',
     icon: DocumentDuplicateIcon,
   },
   {
     name: 'Events & RSVP',
-    summary: 'Drills, briefs, exercises — tracked.',
+    summary: 'Drills, briefs, exercises — checked in.',
     description:
-      'Recurring events, calendar categories, location, links, RSVP, and attendance. Tied directly to training records so participation becomes part of the personnel file.',
+      'Recurring events, RSVP, and QR code check-in. Attendance writes training records and counts toward promotion requirements automatically.',
     image: '/screenshots/event-view.png',
     icon: CalendarDaysIcon,
   },

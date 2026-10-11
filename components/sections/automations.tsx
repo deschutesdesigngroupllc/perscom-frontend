@@ -30,6 +30,9 @@ const actions = [
 ]
 
 const triggerExamples = [
+  'user.daily_review',
+  'credential.expiring',
+  'eventregistration.attended',
   'assignmentrecord.created',
   'awardrecord.updated',
   'rankrecord.created',
@@ -68,9 +71,9 @@ export function Automations() {
               — automatically.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-white/60">
-              Trigger an action on any record change, calendar event, or message — with conditional
-              logic, priority, and full execution logs. Quick-start templates get you running in a
-              click.
+              Trigger on any record change, attendance, or a daily review of every member — time in
+              grade, expiring credentials, days since last seen. Conditional logic, run limits, and
+              full execution logs, with quick-start templates to get you running in a click.
             </p>
 
             <ul className="mt-10 space-y-6">
@@ -101,7 +104,7 @@ export function Automations() {
                   </span>
                 ))}
                 <span className="rounded-md border border-white/5 bg-white/[0.02] px-2.5 py-1 font-mono text-xs text-white/40">
-                  + 20 more
+                  + 30 more
                 </span>
               </div>
             </div>

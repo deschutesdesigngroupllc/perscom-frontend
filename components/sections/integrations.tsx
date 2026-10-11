@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import {
-  KeyIcon,
   CodeBracketSquareIcon,
   GlobeAltIcon,
   PuzzlePieceIcon,
@@ -8,6 +7,7 @@ import {
   ShieldCheckIcon,
   CubeIcon,
   FingerPrintIcon,
+  CpuChipIcon,
 } from '@heroicons/react/24/outline'
 import { Container } from '../ui/container'
 import { Reveal } from '../motion/reveal'
@@ -21,17 +21,17 @@ const pillars = [
     tag: 'v1',
   },
   {
-    icon: KeyIcon,
-    name: 'OAuth 2.0',
+    icon: CpuChipIcon,
+    name: 'MCP server',
     detail:
-      'All four grants supported: Authorization Code, Implicit, Client Credentials, and Password — managed in-app with scopes.',
-    tag: '4 grants',
+      'Every organization gets its own Model Context Protocol server. Connect Claude, Cursor, or any MCP client — read-only and scoped to each member.',
+    tag: 'AI',
   },
   {
     icon: FingerPrintIcon,
-    name: 'OpenID Connect',
+    name: 'OAuth 2.0 & OpenID Connect',
     detail:
-      'Use PERSCOM as an identity provider. Discovery endpoint, ID tokens, JWKS — log into any compliant client.',
+      'Use PERSCOM as an identity provider: four OAuth grants, discovery, signed RS256 ID tokens, and JWKS — managed in-app with scopes.',
     tag: 'OIDC',
   },
   {

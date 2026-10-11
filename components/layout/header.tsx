@@ -21,6 +21,10 @@ import {
   QuestionMarkCircleIcon,
   PlayCircleIcon,
   UserGroupIcon,
+  SparklesIcon,
+  CommandLineIcon,
+  CpuChipIcon,
+  ArrowTrendingUpIcon,
 } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import { Container } from '../ui/container'
@@ -44,13 +48,45 @@ type NavGroup = {
 
 type NavItem = NavLeaf | { name: string; menu: NavGroup[] }
 
+const aiMenu: NavGroup[] = [
+  {
+    name: 'AI-powered',
+    items: [
+      {
+        name: 'AI Organization Builder',
+        description: 'Describe your unit and get a ready-made structure.',
+        href: '/#ai',
+        icon: SparklesIcon,
+      },
+      {
+        name: 'Command Copilot',
+        description: 'Ask for the outcome, approve every change.',
+        href: '/#ai',
+        icon: CommandLineIcon,
+      },
+      {
+        name: 'Connect Your AI (MCP)',
+        description: 'Query your roster from Claude, Cursor, and more.',
+        href: '/#ai',
+        icon: CpuChipIcon,
+      },
+      {
+        name: 'Readiness & Promotions',
+        description: 'Promotion board, expirations, and attendance.',
+        href: '/#readiness',
+        icon: ArrowTrendingUpIcon,
+      },
+    ],
+  },
+]
+
 const productMenu: NavGroup[] = [
   {
     name: 'Personnel',
     items: [
       {
         name: 'Roster & Ranks',
-        description: 'Org hierarchy, paygrades, and progression rules.',
+        description: 'Nested unit hierarchy, insignia, and paygrades.',
         href: '/#features',
         icon: UsersIcon,
       },
@@ -78,7 +114,7 @@ const productMenu: NavGroup[] = [
         icon: BoltIcon,
       },
       {
-        name: 'Discord & Slack',
+        name: 'Discord & Notifications',
         description: 'Lives where your unit already talks.',
         href: '/#discord',
         icon: ChatBubbleLeftRightIcon,
@@ -162,6 +198,7 @@ const resourcesMenu: NavGroup[] = [
 ]
 
 const nav: NavItem[] = [
+  { name: 'AI', menu: aiMenu },
   { name: 'Product', menu: productMenu },
   { name: 'Hosting', menu: hostingMenu },
   { name: 'Pricing', href: '/#pricing' },
