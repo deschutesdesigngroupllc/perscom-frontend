@@ -47,14 +47,14 @@ export function PrimaryFeatures() {
           </p>
           <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
             Everything you need to{' '}
-            <span className="from-brand-600 to-brand-700 bg-gradient-to-r bg-clip-text text-transparent">
+            <span className="from-brand-400 to-brand-600 bg-gradient-to-r bg-clip-text text-transparent">
               run your roster
             </span>
             .
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-white/60">
             Packed with the features your operations team has been asking for — and backed by years
-            of running paramilitary organizations in production.
+            of running real units in production.
           </p>
         </div>
 
@@ -85,8 +85,8 @@ export function PrimaryFeatures() {
                   <Image
                     src={f.image}
                     alt=""
-                    width={1200}
-                    height={750}
+                    width={3024}
+                    height={1600}
                     className="w-full transition duration-500 group-hover:scale-[1.03]"
                   />
                 </div>

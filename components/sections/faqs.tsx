@@ -19,6 +19,10 @@ const faqs = [
     a: 'Only what the signed-in member’s PERSCOM account can see. Each person connects with their own account and approves the access when signing in. Queries run against your organization’s isolated tenant.',
   },
   {
+    q: 'Are the AI features included in the price?',
+    a: 'Yes. Every subscription includes a monthly AI allowance for the Organization Builder and Command Copilot. Asking questions from your own AI tool over MCP uses that tool’s AI, so it doesn’t count against your PERSCOM allowance.',
+  },
+  {
     q: 'What kind of customer support is available?',
     a: 'Email support, a public Slack community, a comprehensive knowledge base, and full API reference. Our team responds quickly and we treat every report as a priority.',
   },
@@ -28,7 +32,7 @@ const faqs = [
   },
   {
     q: 'Can I integrate PERSCOM with the tools I already use?',
-    a: 'Yes. We ship a full REST API, CLI, OAuth 2.0 + OIDC providers, real-time webhooks, and embeddable widgets — so PERSCOM slots into the stack you already run.',
+    a: 'Yes. We ship a full REST API, a PHP SDK, an MCP server for AI tools, OAuth 2.0 + OIDC, real-time webhooks, and embeddable widgets — so PERSCOM slots into the stack you already run.',
   },
   {
     q: 'Can I choose my own address?',
@@ -36,7 +40,7 @@ const faqs = [
   },
   {
     q: 'Can I try PERSCOM before I subscribe?',
-    a: 'Absolutely. Sign up and you get a 7-day free trial before billing begins. No credit card required to start.',
+    a: 'Absolutely. Sign up and you get a 7-day free trial before billing begins. No credit card required to start. You can also explore the live demo without signing up.',
   },
   {
     q: 'What payment methods do you support?',
@@ -48,7 +52,7 @@ const faqs = [
   },
   {
     q: 'Who is PERSCOM designed for?',
-    a: 'Paramilitary and rigid-hierarchy organizations: law enforcement agencies, military units, EMS, fire, search and rescue, and similar public safety teams.',
+    a: 'Organizations with a chain of command: military units, police, fire, EMS, search and rescue, and other public safety teams — anyone who tracks ranks, assignments, qualifications, and readiness.',
   },
   {
     q: 'Why should I subscribe?',

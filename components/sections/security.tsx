@@ -64,7 +64,7 @@ export function Security() {
           <p className="text-brand-400 text-sm font-semibold tracking-wider uppercase">
             Security & Compliance
           </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
+          <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
             Built for the data you can&apos;t afford to lose.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-white/60">

@@ -88,7 +88,7 @@ export function Integrations() {
           <p className="text-brand-400 text-sm font-semibold tracking-wider uppercase">
             Integrations & APIs
           </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
+          <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
             A platform, not a silo.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-white/60">
@@ -133,8 +133,8 @@ export function Integrations() {
               <Image
                 src="/screenshots/api-keys.png"
                 alt="API keys with live request metrics"
-                width={3600}
-                height={1902}
+                width={3136}
+                height={1561}
                 className="w-full"
               />
             </div>
@@ -154,8 +154,8 @@ export function Integrations() {
               <Image
                 src="/screenshots/client-create.png"
                 alt="OAuth client creation"
-                width={3600}
-                height={1902}
+                width={3136}
+                height={1561}
                 className="w-full"
               />
             </div>
@@ -173,9 +173,9 @@ export function Integrations() {
         <Reveal className="mt-12">
           <div className="bg-ink-900/80 overflow-hidden rounded-2xl border border-white/10 shadow-[var(--shadow-ring)]">
             <div className="flex items-center gap-2 border-b border-white/5 px-4 py-2.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
-              <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
-              <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
+              <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+              <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+              <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
               <span className="ml-3 font-mono text-xs text-white/40">
                 composer require perscom/perscom-php
               </span>

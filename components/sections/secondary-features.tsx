@@ -18,6 +18,8 @@ const features = [
     description:
       'Compose once, then pick channels — in-app, email, SMS, Discord — set details, and schedule for later. Onboarding sequences, drill reminders, and command announcements run themselves.',
     image: '/screenshots/message-wizard.png',
+    width: 3136,
+    height: 1561,
     icon: ChatBubbleLeftRightIcon,
   },
   {
@@ -26,6 +28,8 @@ const features = [
     description:
       'Fifteen field types with defaults, validation rules, and conditional visibility. Build DA 4187s, after-action reports, recruitment applications, or anything else your unit submits.',
     image: '/screenshots/form-field-editor.png',
+    width: 3136,
+    height: 1561,
     icon: DocumentDuplicateIcon,
   },
   {
@@ -34,6 +38,8 @@ const features = [
     description:
       'Recurring events, RSVP, and QR code check-in. Attendance writes training records and counts toward promotion requirements automatically.',
     image: '/screenshots/event-view.png',
+    width: 3024,
+    height: 1600,
     icon: CalendarDaysIcon,
   },
 ]
@@ -146,8 +152,8 @@ export function SecondaryFeatures() {
                   <Image
                     src={current.image}
                     alt={current.name}
-                    width={1600}
-                    height={1000}
+                    width={current.width}
+                    height={current.height}
                     className="w-full"
                   />
                 </div>

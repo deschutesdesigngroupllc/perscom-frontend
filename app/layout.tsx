@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'PERSCOM — The AI-powered personnel platform',
     description:
-      'Build your organization with AI, ask Claude or Cursor about your personnel, and keep readiness on autopilot.',
+      'Build your organization with AI, ask Claude and other AI assistants about your personnel, and keep readiness on autopilot.',
     url: siteUrl,
     siteName: 'PERSCOM',
     type: 'website',

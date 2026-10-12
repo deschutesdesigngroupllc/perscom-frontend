@@ -55,26 +55,20 @@ const aiMenu: NavGroup[] = [
       {
         name: 'AI Organization Builder',
         description: 'Describe your unit and get a ready-made structure.',
-        href: '/#ai',
+        href: '/#ai-builder',
         icon: SparklesIcon,
       },
       {
         name: 'Command Copilot',
         description: 'Ask for the outcome, approve every change.',
-        href: '/#ai',
+        href: '/#ai-copilot',
         icon: CommandLineIcon,
       },
       {
         name: 'Connect Your AI (MCP)',
-        description: 'Query your roster from Claude, Cursor, and more.',
-        href: '/#ai',
+        description: 'Ask Claude and other AI tools about your roster.',
+        href: '/#ai-mcp',
         icon: CpuChipIcon,
-      },
-      {
-        name: 'Readiness & Promotions',
-        description: 'Promotion board, expirations, and attendance.',
-        href: '/#readiness',
-        icon: ArrowTrendingUpIcon,
       },
     ],
   },
@@ -95,6 +89,12 @@ const productMenu: NavGroup[] = [
         description: 'Seven record types with MTD / QTD / YTD analytics.',
         href: '/#personnel',
         icon: IdentificationIcon,
+      },
+      {
+        name: 'Readiness & Promotions',
+        description: 'Promotion board, expirations, and attendance.',
+        href: '/#readiness',
+        icon: ArrowTrendingUpIcon,
       },
       {
         name: 'Forms & Workflows',
@@ -121,7 +121,7 @@ const productMenu: NavGroup[] = [
       },
       {
         name: 'API & Integrations',
-        description: 'Full REST API and PHP SDK.',
+        description: 'REST API, MCP server, OAuth, and webhooks.',
         href: '/#integrations',
         icon: CodeBracketSquareIcon,
       },
@@ -253,7 +253,6 @@ function HoverMenu({ name, groups }: { name: string; groups: NavGroup[] }) {
       <button
         type="button"
         aria-expanded={open}
-        aria-haspopup="menu"
         onClick={() => setOpen((v) => !v)}
         onFocus={openNow}
         className={clsx(
@@ -277,7 +276,6 @@ function HoverMenu({ name, groups }: { name: string; groups: NavGroup[] }) {
         leaveTo="opacity-0 -translate-y-1"
       >
         <div
-          role="menu"
           className={clsx(
             'absolute top-full left-1/2 z-50 -translate-x-1/2 pt-3',
             wide ? 'w-[640px]' : 'w-80',
@@ -432,7 +430,7 @@ export function Header() {
               Deploy
             </a>
             <Button href={links.register} size="sm">
-              Start Free Trial
+              Start free trial
             </Button>
           </div>
 
@@ -512,7 +510,7 @@ export function Header() {
                 </ul>
                 <div className="mt-2 flex items-center gap-2 border-t border-white/10 pt-3">
                   <Button href={links.register} className="flex-1">
-                    Start Free Trial
+                    Start free trial
                   </Button>
                   <a
                     href={links.github}

@@ -63,7 +63,7 @@ export function Automations() {
             <p className="text-brand-400 text-sm font-semibold tracking-wider uppercase">
               Automations
             </p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
+            <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
               When this happens,{' '}
               <span className="from-brand-400 to-brand-300 bg-gradient-to-r bg-clip-text text-transparent">
                 do that
@@ -119,8 +119,8 @@ export function Automations() {
               <Image
                 src="/screenshots/automations.png"
                 alt="PERSCOM Automations dashboard with quick-start templates"
-                width={3600}
-                height={1902}
+                width={3024}
+                height={1600}
                 className="w-full rounded-xl"
               />
             </div>

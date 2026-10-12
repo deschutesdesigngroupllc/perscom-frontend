@@ -54,7 +54,7 @@ export function Readiness() {
           </p>
           <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
             Always know who&apos;s{' '}
-            <span className="from-brand-600 to-brand-700 bg-gradient-to-r bg-clip-text text-transparent">
+            <span className="from-brand-400 to-brand-600 bg-gradient-to-r bg-clip-text text-transparent">
               ready, current, and next
             </span>
             .
@@ -97,8 +97,8 @@ export function Readiness() {
                   <Image
                     src="/screenshots/promotion-board.png"
                     alt="PERSCOM Promotion Board listing members eligible for their next rank"
-                    width={2400}
-                    height={1500}
+                    width={3024}
+                    height={1598}
                     className="w-full"
                   />
                 </div>
@@ -107,8 +107,8 @@ export function Readiness() {
                 <Image
                   src="/screenshots/readiness.png"
                   alt="PERSCOM Readiness dashboard showing current, attendance, and expiring metrics per unit"
-                  width={2400}
-                  height={1500}
+                  width={3024}
+                  height={1600}
                   className="w-full rounded-lg"
                 />
               </div>

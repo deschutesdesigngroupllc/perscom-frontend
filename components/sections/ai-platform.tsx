@@ -11,6 +11,7 @@ import { Container } from '../ui/container'
 
 const pillars = [
   {
+    id: 'ai-builder',
     icon: SparklesIcon,
     eyebrow: 'AI Organization Builder',
     title: 'Describe your unit. PERSCOM builds it.',
@@ -23,6 +24,7 @@ const pillars = [
     ],
   },
   {
+    id: 'ai-copilot',
     icon: CommandLineIcon,
     eyebrow: 'Command Copilot',
     title: 'Ask for the outcome. Approve the change.',
@@ -35,9 +37,10 @@ const pillars = [
     ],
   },
   {
+    id: 'ai-mcp',
     icon: CpuChipIcon,
     eyebrow: 'Bring your own AI',
-    title: 'Your roster, inside Claude and Cursor.',
+    title: 'Your roster, inside your AI assistant.',
     description:
       'Every organization gets its own MCP server. Connect Claude, Cursor, or any MCP-compatible tool with your PERSCOM sign-in and ask questions about your personnel in plain English — no exports, no spreadsheets.',
     points: [
@@ -89,7 +92,8 @@ export function AiPlatform() {
           {pillars.map((pillar) => (
             <div
               key={pillar.eyebrow}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur-sm transition-colors hover:border-white/20 hover:bg-white/[0.05]"
+              id={pillar.id}
+              className="group relative flex scroll-mt-28 flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur-sm transition-colors hover:border-white/20 hover:bg-white/[0.05]"
             >
               <div
                 aria-hidden

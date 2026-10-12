@@ -23,11 +23,11 @@ export function CTA() {
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Button href={links.register} size="lg" variant="white">
-              Start your free trial
+              Start free trial
               <ArrowRightIcon className="h-4 w-4" />
             </Button>
             <Button href={links.demo} size="lg" variant="secondary">
-              Explore the demo
+              Try the live demo
             </Button>
           </div>
         </div>

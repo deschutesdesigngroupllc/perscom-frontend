@@ -61,12 +61,12 @@ export function Footer() {
           <div className="col-span-2">
             <Logo />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/60">
-              The personnel command system for police, fire, EMS, military, and public safety
-              organizations.
+              The AI-powered personnel platform for military, police, fire, EMS, and public safety
+              teams.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button href={links.register} size="sm">
-                Start Free Trial
+                Start free trial
               </Button>
               <Button href={links.railway} variant="secondary" size="sm">
                 <span className="grid h-4 w-4 flex-none place-items-center rounded-full bg-white">
