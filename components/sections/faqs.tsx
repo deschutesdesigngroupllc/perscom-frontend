@@ -8,7 +8,7 @@ import { links } from '@/lib/links'
 const faqs = [
   {
     q: 'How does PERSCOM use AI?',
-    a: 'Three ways. The AI Organization Builder drafts your ranks, units, positions, and awards from a short description. Command Copilot finds members and drafts changes like promotions for you to approve — nothing is changed without your sign-off. And every organization gets an MCP server so you can ask Claude, Cursor, or another MCP-compatible tool about your personnel.',
+    a: 'Three ways. The AI Organization Builder drafts your ranks, units, positions, and awards from a short description. Command Copilot finds members and drafts changes like promotions for you to approve — nothing is changed without your sign-off. And every organization gets an MCP server so you can ask Claude, ChatGPT, Gemini, Grok, or another MCP-compatible tool about your personnel.',
   },
   {
     q: 'Can AI change our records without us knowing?',

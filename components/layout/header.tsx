@@ -66,7 +66,7 @@ const aiMenu: NavGroup[] = [
       },
       {
         name: 'Connect Your AI (MCP)',
-        description: 'Ask Claude and other AI tools about your roster.',
+        description: 'Ask Claude, ChatGPT, Gemini, or Grok about your roster.',
         href: '/#ai-mcp',
         icon: CpuChipIcon,
       },

@@ -38,8 +38,8 @@ export function Hero() {
 
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-balance text-white/65 sm:text-xl">
             PERSCOM builds your organization in minutes, answers questions about your people right
-            inside Claude and other AI assistants, and runs readiness and promotions on autopilot —
-            built for military, police, fire, EMS, and public safety teams.
+            inside Claude, ChatGPT, and other AI assistants, and runs readiness and promotions on
+            autopilot — built for military, police, fire, EMS, and public safety teams.
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">

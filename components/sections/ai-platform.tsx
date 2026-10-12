@@ -42,7 +42,7 @@ const pillars = [
     eyebrow: 'Bring your own AI',
     title: 'Your roster, inside your AI assistant.',
     description:
-      'Every organization gets its own MCP server. Connect Claude, Cursor, or any MCP-compatible tool with your PERSCOM sign-in and ask questions about your personnel in plain English — no exports, no spreadsheets.',
+      'Every organization gets its own MCP server. Connect Claude, ChatGPT, Gemini, Grok, or any MCP-compatible tool with your PERSCOM sign-in and ask questions about your personnel in plain English — no exports, no spreadsheets.',
     points: [
       'Read-only & permission-aware',
       'Signs in with your PERSCOM account',
@@ -132,9 +132,9 @@ export function AiPlatform() {
               Ask your AI about your personnel.
             </h3>
             <p className="mt-5 text-base leading-relaxed text-white/60">
-              Paste your organization&apos;s MCP URL into Claude, Claude Code, or Cursor and sign in
-              with PERSCOM. Your AI can search members, records, units, awards, events, and more —
-              always read-only, always limited to what your account can see.
+              Paste your organization&apos;s MCP URL into Claude, ChatGPT, Gemini, Grok, Cursor, or
+              VS Code and sign in with PERSCOM. Your AI can search members, records, units, awards,
+              events, and more — always read-only, always limited to what your account can see.
             </p>
             <ul className="mt-8 space-y-3">
               {guarantees.map((g) => (

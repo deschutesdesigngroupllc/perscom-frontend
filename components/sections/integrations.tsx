@@ -24,7 +24,7 @@ const pillars = [
     icon: CpuChipIcon,
     name: 'MCP server',
     detail:
-      'Every organization gets its own Model Context Protocol server. Connect Claude, Cursor, or any MCP client — read-only and scoped to each member.',
+      'Every organization gets its own Model Context Protocol server. Connect Claude, ChatGPT, Gemini, Grok, Cursor, or any MCP client — read-only and scoped to each member.',
     tag: 'AI',
   },
   {
