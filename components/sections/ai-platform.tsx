@@ -183,14 +183,15 @@ function McpConversation() {
           </div>
 
           <div className="space-y-2 font-mono text-[11px] text-white/45">
-            <p>
-              <span className="text-brand-300">↳ search_resource</span> rank-records · Alpha Company
-              · last 90 days
-            </p>
-            <p>
-              <span className="text-brand-300">↳ search_resource</span> qualification-records ·
-              expires_at &lt; 30d
-            </p>
+            {[
+              'rank-records · Alpha Company · last 90 days',
+              'qualification-records · expires_at < 30d',
+            ].map((args) => (
+              <p key={args} className="flex flex-wrap gap-x-2">
+                <span className="text-brand-300 shrink-0">↳ search_resource</span>
+                <span>{args}</span>
+              </p>
+            ))}
           </div>
 
           <div className="max-w-[92%] space-y-3 rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.04] px-4 py-3.5 text-white/80">
