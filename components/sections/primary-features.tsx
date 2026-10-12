@@ -7,7 +7,7 @@ const features = [
   {
     title: 'Roster you can run an op from',
     description:
-      'Org hierarchy from group → battalion → company → detachment. Real-time online status, leave status, and assignment — searchable, filterable, formation-ready.',
+      'Nested unit hierarchy from battalion → company → platoon. Online status, duty status, and readiness badges on every member — searchable, filterable, and printable as an org chart.',
     image: '/screenshots/roster.png',
     icon: UsersIcon,
     accent: 'from-brand-500 to-brand-400',
@@ -16,7 +16,7 @@ const features = [
   {
     title: 'Rank & paygrade engine',
     description:
-      'Full E-1 through O-10 (or build your own) with insignia, abbreviations, paygrades, and category-driven progression rules.',
+      'Full E-1 through O-10 (or build your own) with insignia, abbreviations, paygrades, and per-rank promotion requirements.',
     image: '/screenshots/ranks.png',
     icon: AdjustmentsHorizontalIcon,
     accent: 'from-brand-700 to-brand-500',
@@ -47,14 +47,14 @@ export function PrimaryFeatures() {
           </p>
           <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
             Everything you need to{' '}
-            <span className="from-brand-600 to-brand-700 bg-gradient-to-r bg-clip-text text-transparent">
+            <span className="from-brand-400 to-brand-600 bg-gradient-to-r bg-clip-text text-transparent">
               run your roster
             </span>
             .
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-white/60">
             Packed with the features your operations team has been asking for — and backed by years
-            of running paramilitary organizations in production.
+            of running real units in production.
           </p>
         </div>
 
@@ -85,8 +85,8 @@ export function PrimaryFeatures() {
                   <Image
                     src={f.image}
                     alt=""
-                    width={1200}
-                    height={750}
+                    width={3024}
+                    height={1600}
                     className="w-full transition duration-500 group-hover:scale-[1.03]"
                   />
                 </div>

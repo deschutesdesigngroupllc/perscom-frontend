@@ -93,8 +93,8 @@ export function SlackMock() {
                   <div>
                     <p className="text-xs font-bold text-white">Status</p>
                     <p className="mt-0.5">
-                      <span className="inline-flex items-center gap-1 rounded-sm bg-[#2eb67d]/15 px-1.5 py-0.5 text-xs font-semibold text-[#2eb67d]">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#2eb67d]" />
+                      <span className="bg-brand-500/15 text-brand-200 inline-flex items-center gap-1 rounded-sm px-1.5 py-0.5 text-xs font-semibold">
+                        <span className="bg-brand-400 h-1.5 w-1.5 rounded-full" />
                         Approved
                       </span>
                     </p>

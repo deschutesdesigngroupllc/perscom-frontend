@@ -19,13 +19,15 @@ const siteUrl = 'https://perscom.io'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'PERSCOM — Personnel management built for mission-critical teams',
+    default: 'PERSCOM — The AI-powered personnel platform for high-performing organizations',
     template: '%s · PERSCOM',
   },
   description:
-    'Mission-critical personnel management for police, fire, EMS, military, and public safety agencies. Streamline communications, centralize records, and run a tighter operation.',
+    'PERSCOM is the AI-powered personnel platform for high-performing organizations. Build your structure with AI, ask your own AI tools about your people, and keep readiness and promotions on autopilot.',
   keywords: [
+    'AI personnel management',
     'personnel management',
+    'MCP server',
     'PERSCOM',
     'military software',
     'first responder software',
@@ -33,9 +35,9 @@ export const metadata: Metadata = {
     'personnel command',
   ],
   openGraph: {
-    title: 'PERSCOM — Personnel management built for mission-critical teams',
+    title: 'PERSCOM — The AI-powered personnel platform',
     description:
-      'Streamline communications, centralize records, and run a tighter operation with PERSCOM.',
+      'Build your organization with AI, ask Claude, ChatGPT, and other AI assistants about your personnel, and keep readiness on autopilot.',
     url: siteUrl,
     siteName: 'PERSCOM',
     type: 'website',
@@ -43,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'PERSCOM',
-    description: 'Personnel management built for mission-critical teams.',
+    description: 'The AI-powered personnel platform for high-performing organizations.',
   },
 }
 

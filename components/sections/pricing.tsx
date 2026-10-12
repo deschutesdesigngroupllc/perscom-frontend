@@ -9,6 +9,10 @@ import { Button } from '../ui/button'
 import { links } from '@/lib/links'
 
 const features = [
+  'AI Organization Builder',
+  'Command Copilot',
+  'MCP server for your AI tools',
+  'Readiness & promotion board',
   'Unlimited members',
   'Powerful REST API',
   'Real-time webhooks',
@@ -16,8 +20,8 @@ const features = [
   'Single sign-on',
   'Social login support',
   'Custom subdomain',
+  'Multi-factor authentication',
   'Automated backups',
-  'Records management',
   'Embeddable widgets',
   'Discord & SMS notifications',
   'Priority email support',
@@ -33,7 +37,7 @@ export function Pricing() {
           <p className="text-brand-400 text-sm font-semibold tracking-wider uppercase">Pricing</p>
           <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
             One plan.{' '}
-            <span className="from-brand-600 to-brand-700 bg-gradient-to-r bg-clip-text text-transparent">
+            <span className="from-brand-400 to-brand-600 bg-gradient-to-r bg-clip-text text-transparent">
               Everything included.
             </span>
           </h2>
@@ -51,6 +55,8 @@ export function Pricing() {
                 return (
                   <button
                     key={opt}
+                    type="button"
+                    aria-pressed={isActive}
                     onClick={() => setYearly(opt === 'yearly')}
                     className={clsx(
                       'relative z-10 rounded-full px-6 py-2 text-sm font-medium transition',
@@ -100,7 +106,7 @@ export function Pricing() {
               <div>
                 <p className="font-display text-2xl font-semibold">Professional</p>
                 <p className="mt-2 text-white/60">
-                  Complete personnel management. Perfect for organizations of any size.
+                  The complete AI-powered personnel platform. Built for organizations of any size.
                 </p>
                 <div className="mt-8 flex items-baseline gap-2">
                   <AnimatePresence mode="wait">
@@ -118,9 +124,11 @@ export function Pricing() {
                   <span className="text-white/50">/ {yearly ? 'year' : 'month'}</span>
                 </div>
                 <Button href={links.register} size="lg" className="mt-8">
-                  Start your 7-day free trial
+                  Start free trial
                 </Button>
-                <p className="mt-3 text-xs text-white/40">No credit card required to start.</p>
+                <p className="mt-3 text-xs text-white/40">
+                  7-day free trial · No credit card required to start.
+                </p>
               </div>
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {features.map((f) => (
@@ -131,6 +139,10 @@ export function Pricing() {
                     <span className="text-white/80">{f}</span>
                   </li>
                 ))}
+                <li className="text-xs leading-relaxed text-white/45 sm:col-span-2">
+                  Includes a monthly AI allowance for the Organization Builder and Copilot.
+                  Questions asked from your own AI tool over MCP don&apos;t count against it.
+                </li>
               </ul>
             </div>
           </div>

@@ -15,19 +15,19 @@ export function CTA() {
       <Container className="relative">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-4xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl">
-            Get the right tool in your team&apos;s hands.
+            Put an AI teammate on your staff.
           </h2>
           <p className="mt-6 text-lg text-balance text-white/80">
-            Free for a week. No credit card needed. Drop the duct tape and start running your
-            organization the way it deserves.
+            Free for a week. No credit card needed. Describe your organization, and be running on
+            PERSCOM before your next drill.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Button href={links.register} size="lg" variant="white">
-              Start your free trial
+              Start free trial
               <ArrowRightIcon className="h-4 w-4" />
             </Button>
             <Button href={links.demo} size="lg" variant="secondary">
-              Explore the demo
+              Try the live demo
             </Button>
           </div>
         </div>

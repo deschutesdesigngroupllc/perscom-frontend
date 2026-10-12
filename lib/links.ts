@@ -8,6 +8,6 @@ export const links = {
   github: 'https://github.com/deschutesdesigngroupllc/perscom-app',
   railway:
     'https://railway.com/deploy/perscom?referralCode=O-oe8s&utm_medium=integration&utm_source=template&utm_campaign=generic',
-  railwayDocs: 'https://github.com/deschutesdesigngroupllc/perscom-app/blob/main/docs/RAILWAY.md',
+  railwayDocs: 'https://docs.perscom.io/guides/deployment',
   home: '/',
 }
