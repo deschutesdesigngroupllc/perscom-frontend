@@ -109,8 +109,8 @@ export function DiscordMock() {
                   <div>
                     <p className="text-xs font-semibold text-white">Status</p>
                     <p className="mt-0.5">
-                      <span className="inline-flex items-center gap-1 rounded-sm bg-emerald-500/15 px-1.5 py-0.5 text-xs font-medium text-emerald-300">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      <span className="bg-brand-500/15 text-brand-200 inline-flex items-center gap-1 rounded-sm px-1.5 py-0.5 text-xs font-medium">
+                        <span className="bg-brand-400 h-1.5 w-1.5 rounded-full" />
                         Approved
                       </span>
                     </p>

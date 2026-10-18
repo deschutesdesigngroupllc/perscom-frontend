@@ -9,9 +9,9 @@ import { SlackMock } from './slack-mock'
 
 type Platform = 'discord' | 'slack'
 
-const platforms: Record<Platform, { label: string; accent: string }> = {
+const platforms: Record<Platform, { label: string; accent: string; soon?: boolean }> = {
   discord: { label: 'Discord', accent: 'text-[#5865f2]' },
-  slack: { label: 'Slack', accent: 'text-[#36c5f0]' },
+  slack: { label: 'Slack', accent: 'text-[#36c5f0]', soon: true },
 }
 
 const highlights = [
@@ -25,13 +25,13 @@ const highlights = [
     icon: ChatBubbleLeftRightIcon,
     title: 'Real embeds, not pings',
     description:
-      'Rich embeds and Block Kit attachments with rank, citation, paygrade, and effective date. Your members get the whole story in one message.',
+      'Rich Discord embeds with the member, rank, award, unit, and a link straight to the record. Your members get the whole story in one message.',
   },
   {
     icon: CodeBracketIcon,
     title: 'Webhooks + a real API',
     description:
-      'Discord and Slack are two of many. Twilio SMS, email, generic webhooks, and OAuth/OIDC for your own bots — wire it however you run ops.',
+      'Discord is one of many. Twilio SMS, email, generic webhooks, and OAuth/OIDC for your own bots — with Slack support on the way.',
   },
 ]
 
@@ -56,14 +56,20 @@ export function LivesInDiscord() {
             <p className="text-brand-400 text-sm font-semibold tracking-wider uppercase">
               Lives where your team lives
             </p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
+            <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
               Every promotion, every order — straight into{' '}
               <span className={active.accent}>{active.label}</span>.
             </h2>
+            {active.soon ? (
+              <p className="border-brand-400/30 bg-brand-500/10 text-brand-200 mt-4 inline-flex rounded-full border px-3 py-1 text-xs font-medium">
+                Slack support is coming soon
+              </p>
+            ) : null}
             <p className="mt-6 text-lg leading-relaxed text-white/60">
-              Your members are already in {active.label}. PERSCOM meets them there — rich,
-              auto-generated messages for promotions, awards, assignments, AARs, and event RSVPs. No
-              more &quot;@everyone go check the website.&quot;
+              Your members are already in {active.label}. PERSCOM{' '}
+              {active.soon ? 'will meet' : 'meets'} them there — rich, auto-generated messages for
+              promotions, awards, assignments, AARs, and event RSVPs. No more &quot;@everyone go
+              check the website.&quot;
             </p>
 
             <ul className="mt-10 space-y-6">
@@ -109,6 +115,9 @@ export function LivesInDiscord() {
                     )}
                   >
                     {platforms[key].label}
+                    {platforms[key].soon ? (
+                      <span className="ml-1.5 text-white/40">· Soon</span>
+                    ) : null}
                   </button>
                 )
               })}

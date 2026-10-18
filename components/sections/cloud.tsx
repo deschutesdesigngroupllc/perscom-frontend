@@ -35,16 +35,15 @@ const perks = [
   {
     icon: LifebuoyIcon,
     title: 'Human support',
-    detail: 'Real people who run units themselves. Discord, email, and onboarding sessions.',
+    detail: 'Real people who run units themselves. Email support plus an active Slack community.',
   },
 ]
 
 const included = [
   'Unlimited members on every plan',
   'Daily encrypted backups',
-  '99.9% uptime SLA',
-  'Free SSL on a perscom.io subdomain',
-  'Custom domain support',
+  'Your own perscom.io subdomain with SSL',
+  'AI features with a monthly allowance',
   'All integrations & API access',
 ]
 

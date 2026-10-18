@@ -16,13 +16,13 @@ const reasons = [
     icon: ServerStackIcon,
     title: 'Your infrastructure, your rules',
     detail:
-      'Run PERSCOM on hardware you control. Pick the region, set the backup policy, define the SLA — it&apos;s your stack.',
+      'Run PERSCOM on hardware you control. Pick the region, set the backup policy, define the SLA — it’s your stack.',
   },
   {
     icon: ShieldCheckIcon,
     title: 'Sensitive data stays put',
     detail:
-      'Members&apos; PII never leaves your tenant. Useful for orgs with data-residency obligations or strict legal review.',
+      'Members’ PII never leaves your tenant. Useful for orgs with data-residency obligations or strict legal review.',
   },
   {
     icon: CodeBracketIcon,
@@ -66,7 +66,7 @@ export function SelfHost() {
           <p className="text-brand-400 text-sm font-semibold tracking-wider uppercase">
             Open & self-hostable
           </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
+          <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
             Run it on your own hardware.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-white/60">
@@ -121,10 +121,7 @@ export function SelfHost() {
                   <r.icon className="text-brand-300 h-5 w-5" />
                 </div>
                 <h3 className="mt-5 font-medium text-white">{r.title}</h3>
-                <p
-                  className="mt-2 text-sm leading-relaxed text-white/60"
-                  dangerouslySetInnerHTML={{ __html: r.detail }}
-                />
+                <p className="mt-2 text-sm leading-relaxed text-white/60">{r.detail}</p>
               </div>
             </Reveal>
           ))}
@@ -177,9 +174,9 @@ export function SelfHost() {
           <Reveal delay={0.08} className="lg:col-span-7">
             <div className="bg-ink-900/80 overflow-hidden rounded-2xl border border-white/10 shadow-[var(--shadow-ring)]">
               <div className="flex items-center gap-2 border-b border-white/5 px-4 py-2.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
+                <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
                 <span className="ml-3 inline-flex items-center gap-1.5 font-mono text-xs text-white/40">
                   <CommandLineIcon className="h-3.5 w-3.5" />
                   ~/perscom-app
@@ -190,18 +187,10 @@ export function SelfHost() {
 git clone https://github.com/deschutesdesigngroupllc/perscom-app
 cd perscom-app
 
-# 2. Install dependencies
-composer install
-npm install && npm run build
+# 2. Install and configure everything
+composer setup
 
-# 3. Configure environment
-cp .env.example .env
-php artisan key:generate
-
-# 4. Run the migrations
-php artisan migrate --seed
-
-# 5. Boot it
+# 3. Boot it
 php artisan serve
 `}
               </pre>

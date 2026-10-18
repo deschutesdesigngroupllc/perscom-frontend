@@ -68,7 +68,7 @@ const profileFacets = [
     icon: IdentificationIcon,
     title: 'Identity & contact',
     detail:
-      'Name, display name, email, phone, profile photo, cover photo, and a linked Discord / GitHub / Google / Facebook account.',
+      'Name, display name, email, phone, profile photo, cover photo, and a linked Discord, GitHub, or Google account.',
   },
   {
     icon: AdjustmentsHorizontalIcon,
@@ -86,13 +86,13 @@ const profileFacets = [
     icon: CheckBadgeIcon,
     title: 'Credentials',
     detail:
-      'Issued credentials with issuer, validity, and expiration. Tracked separately from qualifications for compliance work.',
+      'Issued credentials with issuer, validity period, and expiration — with automatic reminders before anything lapses.',
   },
   {
     icon: Squares2X2Icon,
     title: 'Custom fields',
     detail:
-      'Any field your unit needs — text, select, file, date — saved to the personnel file alongside everything else.',
+      'Fifteen field types — text, select, date, file, number, country, timezone, and more — saved to the personnel file alongside everything else.',
   },
   {
     icon: PaperClipIcon,
@@ -119,7 +119,7 @@ export function PersonnelRecord() {
           <p className="text-brand-400 text-sm font-semibold tracking-wider uppercase">
             The personnel file
           </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
+          <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
             A real record for every member.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-white/60">
@@ -140,8 +140,8 @@ export function PersonnelRecord() {
               <Image
                 src="/screenshots/profile-assignments.png"
                 alt="Personnel record with assignment history and record-type sub-tabs"
-                width={3600}
-                height={1902}
+                width={3136}
+                height={1561}
                 className="w-full rounded-xl"
               />
             </div>
