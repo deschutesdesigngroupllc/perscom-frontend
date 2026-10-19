@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Container } from '../ui/container'
 import { Logo } from '../ui/logo'
 import { Button } from '../ui/button'
+import { DdgCredit } from './ddg-credit'
 import { links } from '@/lib/links'
 
 const sections = [
@@ -112,9 +113,12 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
-          <p className="text-xs text-white/40">
-            &copy; {new Date().getFullYear()} Deschutes Design Group LLC. All rights reserved.
-          </p>
+          <div className="flex flex-col gap-3 text-white/70 sm:flex-row sm:items-center sm:gap-6">
+            <p className="text-xs text-white/40">
+              &copy; {new Date().getFullYear()} Deschutes Design Group LLC. All rights reserved.
+            </p>
+            <DdgCredit accent="#60a5fa" label="Made by" />
+          </div>
           <div className="flex items-center gap-2">
             <a
               href={links.slack}
